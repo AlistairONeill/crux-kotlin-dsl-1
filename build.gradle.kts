@@ -85,20 +85,23 @@ tasks.javadoc {
     }
 }
 
+val cruxVersion: String by project
+val junitVersion: String by project
+
 dependencies {
     implementation(platform("org.jetbrains.kotlin:kotlin-bom"))
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
 
-    api("juxt:crux-core:21.04-1.16.0-beta") {
+    api("pro.juxt.crux", "crux-core", cruxVersion) {
         isTransitive = true
     }
 
     testImplementation(kotlin("test-junit5"))
-    testImplementation("org.junit.jupiter:junit-jupiter-api:5.6.0")
-    testImplementation("org.junit.jupiter:junit-jupiter-params:5.6.0")
+    testImplementation("org.junit.jupiter", "junit-jupiter-api", junitVersion)
+    testImplementation("org.junit.jupiter", "junit-jupiter-params", junitVersion)
     testImplementation("com.natpryce:hamkrest:1.8.0.1")
     testImplementation("juxt:crux-rocksdb:21.04-1.16.0-beta")
-    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.6.0")
+    testRuntimeOnly("org.junit.jupiter", "junit-jupiter-engine", junitVersion)
 }
 
 tasks.test {

@@ -15,7 +15,7 @@ repositories {
 }
 ```
 
-Then add `crux-kotlin-dsl` as a dependency:
+Add `crux-kotlin-dsl` as a dependency:
 
 ```kotlin
 dependencies {
