@@ -4,17 +4,6 @@ A Kotlin DSL for Crux which enables pretty transactions and queries
 
 == Quickstart
 
-Add Clojars to your repositories:
-
-```kotlin
-repositories {
-    maven {
-        name = "Clojars"
-        url = uri("https://repo.clojars.org/")
-    }
-}
-```
-
 Add `crux-kotlin-dsl` as a dependency:
 
 ```kotlin
